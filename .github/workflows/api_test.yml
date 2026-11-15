@@ -42,7 +42,7 @@ jobs:
       api_changed: ${{ steps.plan.outputs.api_changed }}
       cuvs_changed: ${{ steps.plan.outputs.cuvs_changed }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - id: plan
@@ -109,7 +109,7 @@ jobs:
             -o Acquire::Retries=2 install -y \
             git ca-certificates build-essential clang pkg-config curl unzip xz-utils \
             python3 libssl-dev
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           submodules: recursive
           fetch-depth: 0
@@ -204,7 +204,7 @@ jobs:
           apt-get -o Acquire::https::CaInfo=/tmp/runner-ca-certificates.crt \
             -o Acquire::Retries=2 install -y --no-install-recommends \
             git ca-certificates curl python3 cmake build-essential
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           submodules: recursive
       - uses: ./.github/actions/linux-test-env
@@ -290,7 +290,7 @@ jobs:
           apt-get -o Acquire::https::CaInfo=/tmp/runner-ca-certificates.crt \
             -o Acquire::Retries=2 install -y --no-install-recommends \
             git ca-certificates curl python3 cmake build-essential ffmpeg lsof procps
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           submodules: recursive
           fetch-depth: 100
